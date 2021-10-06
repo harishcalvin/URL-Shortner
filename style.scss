@@ -120,14 +120,17 @@ a {
 }
 
 .input--bg--box {
-    width: 100%;
+    width: 90%;
     height: 10.5rem;
-    background-color: $fea-clr;
+    background-color: $-clr;
+    background-image: url(./images/bg-shorten-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    margin-top: 5.9375rem;
+    margin: 5.9375rem auto auto auto;
     .form {
         input::placeholder {
             color: $pri-clr;
@@ -135,13 +138,13 @@ a {
             font-size: 1.25rem;
         }
         input {
-            max-width: 100%;
+            width: 585px;
             height: 64px;
             border-radius: 10px;
             border: none;
-            text-indent: 50px;
+            text-indent: 20px;
             outline: none;
-            font-size: 1.25rem;
+            font-size: 1.24rem;
         }
         .btn--shorten {
             width: 11.75rem;
@@ -224,7 +227,10 @@ a {
 
 .call--of--action {
     background-color: $-clr;
-    width: auto;
+    background-image: url(./images/bg-boost-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
     height: 15rem;
     display: flex;
     align-items: center;
@@ -243,7 +249,7 @@ a {
 .footer {
     background-color: $foot-clr;
     color: $wht-clr;
-    height: 13.125rem;
+    height: 100%;
     padding: 4.5rem 0px;
     .content {
         display: flex;
@@ -255,10 +261,24 @@ a {
     }
     .footer--menu {
         display: flex;
+        .footer--links {
+            padding-right: 20px;
+            .footer--link {
+                padding-bottom: 10px;
+            }
+        }
+        .footer--links--title {
+            padding-bottom: 22px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+    .footer--social--links {
+        a {
+            padding-right: 15px;
+        }
     }
 }
-
-@media(min-width: 769px) {}
 
 @media(max-width: 1200px) {
     nav {
@@ -287,6 +307,53 @@ a {
             align-items: center;
             .btn--shorten {
                 margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .input--bg--box {
+        .form {
+            input {
+                width: 450px;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .footer {
+        .content {
+            flex-direction: column;
+            justify-content: center;
+            .footer--menu {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .footer--links {
+                    text-align: center;
+                    .footer--links--title {
+                        padding-top: 20px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+            .footer--social--links {
+                padding-top: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .input--bg--box {
+        .form {
+            input {
+                width: 258px;
             }
         }
     }

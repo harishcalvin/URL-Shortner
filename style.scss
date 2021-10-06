@@ -3,6 +3,7 @@ $pri-clr: #34313D;
 $-clr: #3A3054;
 $fea-clr: #4B3F6B;
 $fea-2-clr: #2BD0D0;
+$fea-hover-clr: #9AE3E3;
 $bg-clr: #F2F2F2;
 $wht-clr: #fff;
 $sec-clr: #9E9AA8;
@@ -35,8 +36,12 @@ a {
         background: transparent;
         border: none;
         margin-right: 2.3125rem;
+        .btn--text:hover {
+            color: $pri-clr;
+        }
         .btn--text {
             color: $sec-clr;
+            font-weight: 700;
         }
     }
     .btn--sign--up {
@@ -58,12 +63,17 @@ a {
     margin-top: 2.4375rem;
 }
 
+.btn {
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: $fea-hover-clr;
+}
+
 .container {
     .home {
         background-color: $wht-clr;
-    }
-    .content {
-        width: 80%;
     }
     .navbar {
         display: flex;
@@ -82,8 +92,12 @@ a {
             li {
                 list-style: none;
                 padding-right: 1.8125rem;
+                .nav--link:hover {
+                    color: $pri-clr;
+                }
                 .nav--link {
                     color: $sec-clr;
+                    font-weight: 700;
                 }
             }
         }
@@ -146,6 +160,9 @@ a {
             outline: none;
             font-size: 1.24rem;
         }
+        .btn--shorten:hover {
+            background-color: $fea-hover-clr;
+        }
         .btn--shorten {
             width: 11.75rem;
             height: 4rem;
@@ -155,7 +172,6 @@ a {
             border-radius: 10px;
             font-size: 1.25rem;
             font-weight: 700;
-            cursor: pointer;
         }
     }
 }
@@ -262,9 +278,12 @@ a {
     .footer--menu {
         display: flex;
         .footer--links {
-            padding-right: 20px;
+            padding-right: 40px;
             .footer--link {
                 padding-bottom: 10px;
+                 :hover {
+                    color: $fea-2-clr;
+                }
             }
         }
         .footer--links--title {
@@ -276,6 +295,12 @@ a {
     .footer--social--links {
         a {
             padding-right: 15px;
+            .icon--social--link {
+                fill: $wht-clr;
+            }
+            .icon--social--link:hover {
+                fill: $fea-2-clr;
+            }
         }
     }
 }
@@ -332,6 +357,7 @@ a {
                 justify-content: center;
                 align-items: center;
                 .footer--links {
+                    padding-right: 0;
                     text-align: center;
                     .footer--links--title {
                         padding-top: 20px;

@@ -15,6 +15,94 @@ a {
   margin: auto;
 }
 
+.container .home {
+  background-color: #fff;
+}
+
+.container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .navbar .logo {
+  padding-right: 2.8125rem;
+  color: #34313D;
+  font-size: 2rem;
+}
+
+.container .navbar .nav--menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .navbar .nav--menu .nav--menu--links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .navbar .nav--menu .nav--menu--links li {
+  list-style: none;
+}
+
+.container .navbar .nav--menu .nav--menu--links li .nav--link:hover {
+  color: #34313D;
+}
+
+.container .navbar .nav--menu .nav--menu--links li .nav--link {
+  color: #9E9AA8;
+  font-weight: 700;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.line {
+  height: 4px;
+  margin: 3px;
+  width: 25px;
+  border-radius: 4px;
+  background-color: black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.toggle .line--one {
+  -webkit-transform: rotate(-45deg) translate(-3px, 6px);
+          transform: rotate(-45deg) translate(-3px, 6px);
+}
+
+.toggle .line--two {
+  opacity: 0;
+}
+
+.toggle .line--three {
+  -webkit-transform: rotate(45deg) translate(-4px, -7px);
+          transform: rotate(45deg) translate(-4px, -7px);
+}
+
 .nav--menu--btns .btn--text {
   color: #fff;
   text-decoration: none;
@@ -25,7 +113,6 @@ a {
 .nav--menu--btns .btn--login {
   background: transparent;
   border: none;
-  margin-right: 2.3125rem;
 }
 
 .nav--menu--btns .btn--login .btn--text:hover {
@@ -61,53 +148,6 @@ a {
 
 .btn:hover {
   background-color: #9AE3E3;
-}
-
-.container .home {
-  background-color: #fff;
-}
-
-.container .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 2.8125rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.container .navbar .logo {
-  padding-right: 2.8125rem;
-  color: #34313D;
-  font-size: 2rem;
-}
-
-.container .navbar .nav--menu--links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.container .navbar .nav--menu--links li {
-  list-style: none;
-  padding-right: 1.8125rem;
-}
-
-.container .navbar .nav--menu--links li .nav--link:hover {
-  color: #34313D;
-}
-
-.container .navbar .nav--menu--links li .nav--link {
-  color: #9E9AA8;
-  font-weight: 700;
 }
 
 .hero {
@@ -402,10 +442,79 @@ a {
   fill: #2BD0D0;
 }
 
+@media (min-width: 1201px) {
+  .navbar {
+    margin-top: 2.8125rem;
+  }
+  .nav--menu--links li {
+    padding-right: 1.8125rem;
+  }
+  .btn--login {
+    margin-right: 2.3125rem;
+  }
+}
+
 @media (max-width: 1200px) {
-  nav .nav--menu--links li,
-  nav .nav--menu--btns {
-    display: none;
+  .navbar {
+    margin-top: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nav--menu {
+    background-color: #3A3054;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    visibility: hidden;
+    position: absolute;
+    right: 10%;
+    top: 50px;
+    border-radius: 10px;
+    z-index: 5;
+    width: 50%;
+    margin-top: 0;
+    padding: 20px 10px;
+  }
+  .nav--menu .nav--menu--links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav--menu .nav--menu--links li {
+    padding: 10px 5px;
+  }
+  .nav--menu .nav--menu--btns > button {
+    margin: 15px 5px;
+  }
+  .nav--menu .nav--menu--btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hamburger {
+    display: block;
+  }
+  .show--nav--menu {
+    visibility: visible;
   }
   .hero {
     -webkit-box-orient: vertical;

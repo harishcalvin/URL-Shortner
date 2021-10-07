@@ -3,6 +3,7 @@ $pri-clr: #34313D;
 $-clr: #3A3054;
 $fea-clr: #4B3F6B;
 $fea-2-clr: #2BD0D0;
+$fea-hover-clr: #9AE3E3;
 $bg-clr: #F2F2F2;
 $wht-clr: #fff;
 $sec-clr: #9E9AA8;
@@ -24,6 +25,69 @@ a {
     margin: auto;
 }
 
+.container {
+    .home {
+        background-color: $wht-clr;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .logo {
+            padding-right: 2.8125rem;
+            color: $pri-clr;
+            font-size: 2rem;
+        }
+        .nav--menu {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1;
+            .nav--menu--links {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1;
+                li {
+                    list-style: none;
+                    .nav--link:hover {
+                        color: $pri-clr;
+                    }
+                    .nav--link {
+                        color: $sec-clr;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    height: 4px;
+    margin: 3px;
+    width: 25px;
+    border-radius: 4px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.toggle .line--one {
+    transform: rotate(-45deg) translate(-3px, 6px);
+}
+
+.toggle .line--two {
+    opacity: 0;
+}
+
+.toggle .line--three {
+    transform: rotate(45deg) translate(-4px, -7px);
+}
+
 .nav--menu--btns {
     .btn--text {
         color: $wht-clr;
@@ -34,9 +98,12 @@ a {
     .btn--login {
         background: transparent;
         border: none;
-        margin-right: 2.3125rem;
+        .btn--text:hover {
+            color: $pri-clr;
+        }
         .btn--text {
             color: $sec-clr;
+            font-weight: 700;
         }
     }
     .btn--sign--up {
@@ -58,36 +125,12 @@ a {
     margin-top: 2.4375rem;
 }
 
-.container {
-    .home {
-        background-color: $wht-clr;
-    }
-    .content {
-        width: 80%;
-    }
-    .navbar {
-        display: flex;
-        align-items: center;
-        margin-top: 2.8125rem;
-        flex-wrap: wrap;
-        .logo {
-            padding-right: 2.8125rem;
-            color: $pri-clr;
-            font-size: 2rem;
-        }
-        .nav--menu--links {
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1;
-            li {
-                list-style: none;
-                padding-right: 1.8125rem;
-                .nav--link {
-                    color: $sec-clr;
-                }
-            }
-        }
-    }
+.btn {
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: $fea-hover-clr;
 }
 
 .hero {
@@ -146,6 +189,9 @@ a {
             outline: none;
             font-size: 1.24rem;
         }
+        .btn--shorten:hover {
+            background-color: $fea-hover-clr;
+        }
         .btn--shorten {
             width: 11.75rem;
             height: 4rem;
@@ -155,7 +201,6 @@ a {
             border-radius: 10px;
             font-size: 1.25rem;
             font-weight: 700;
-            cursor: pointer;
         }
     }
 }
@@ -262,9 +307,12 @@ a {
     .footer--menu {
         display: flex;
         .footer--links {
-            padding-right: 20px;
+            padding-right: 40px;
             .footer--link {
                 padding-bottom: 10px;
+                 :hover {
+                    color: $fea-2-clr;
+                }
             }
         }
         .footer--links--title {
@@ -276,16 +324,70 @@ a {
     .footer--social--links {
         a {
             padding-right: 15px;
+            .icon--social--link {
+                fill: $wht-clr;
+            }
+            .icon--social--link:hover {
+                fill: $fea-2-clr;
+            }
         }
     }
 }
 
-@media(max-width: 1200px) {
-    nav {
-        .nav--menu--links li,
-        .nav--menu--btns {
-            display: none;
+@media(min-width: 1201px) {
+    .navbar {
+        margin-top: 2.8125rem;
+    }
+    .nav--menu--links {
+        li {
+            padding-right: 1.8125rem;
         }
+    }
+    .btn--login {
+        margin-right: 2.3125rem;
+    }
+}
+
+@media(max-width: 1200px) {
+    .navbar {
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    .nav--menu {
+        background-color: $-clr;
+        flex-direction: column;
+        visibility: hidden;
+        position: absolute;
+        right: 10%;
+        top: 50px;
+        border-radius: 10px;
+        z-index: 5;
+        width: 50%;
+        margin-top: 0;
+        padding: 20px 10px;
+        .nav--menu--links {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            li {
+                padding: 10px 5px;
+            }
+        }
+        .nav--menu--btns>button {
+            margin: 15px 5px;
+        }
+        .nav--menu--btns {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .hamburger {
+        display: block;
+    }
+    .show--nav--menu {
+        visibility: visible;
     }
     .hero {
         flex-direction: column-reverse;
@@ -332,6 +434,7 @@ a {
                 justify-content: center;
                 align-items: center;
                 .footer--links {
+                    padding-right: 0;
                     text-align: center;
                     .footer--links--title {
                         padding-top: 20px;

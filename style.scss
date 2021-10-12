@@ -25,6 +25,11 @@ a {
     margin: auto;
 }
 
+svg {
+    width: auto;
+    height: auto;
+}
+
 .container {
     .home {
         background-color: $wht-clr;
@@ -162,9 +167,11 @@ a {
     }
 }
 
+//fixme
 .input--bg--box {
     width: 90%;
     height: 10.5rem;
+    max-height: 11.375rem;
     background-color: $-clr;
     background-image: url(./images/bg-shorten-desktop.svg);
     background-repeat: no-repeat;
@@ -172,15 +179,32 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px;
     border-radius: 10px;
-    margin: 5.9375rem auto auto auto;
+    margin: 5.9375rem 0 0 0;
+    .btn--shorten:hover {
+        background-color: $fea-hover-clr;
+    }
+    .btn--shorten {
+        width: 11.75rem;
+        height: 4rem;
+        color: $wht-clr;
+        background-color: $fea-2-clr;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-left: 10px;
+    }
     .form {
+        display: flex;
+        flex-direction: column;
         input::placeholder {
             color: $pri-clr;
             font-size: 500;
             font-size: 1.25rem;
         }
-        input {
+        .input--box {
             width: 585px;
             height: 64px;
             border-radius: 10px;
@@ -189,20 +213,23 @@ a {
             outline: none;
             font-size: 1.24rem;
         }
-        .btn--shorten:hover {
-            background-color: $fea-hover-clr;
-        }
-        .btn--shorten {
-            width: 11.75rem;
-            height: 4rem;
-            color: $wht-clr;
-            background-color: $fea-2-clr;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.25rem;
-            font-weight: 700;
+        .input--error--text {
+            visibility: hidden;
+            padding: 10px 0;
+            color: #F46363;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 16px;
         }
     }
+}
+
+.input--box--red {
+    border: 2px solid #F46363 !important;
+}
+
+.red::placeholder {
+    color: #F46363 !important;
 }
 
 .statistics {
@@ -234,7 +261,7 @@ a {
     .statistics--benefits--box {
         position: relative;
         height: 267px;
-        width: 350px;
+        width: 20.4375rem;
         border-radius: 5px;
         background-color: $wht-clr;
         margin: 40px 10px;
@@ -291,6 +318,7 @@ a {
     }
 }
 
+// note 
 .footer {
     background-color: $foot-clr;
     color: $wht-clr;
@@ -345,6 +373,9 @@ a {
     }
     .btn--login {
         margin-right: 2.3125rem;
+    }
+    .input--bg--box {
+        align-items: flex-start;
     }
 }
 
@@ -402,14 +433,18 @@ a {
         }
     }
     .input--bg--box {
+        flex-direction: column;
         .form {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            .btn--shorten {
-                margin-top: 20px;
-            }
+            align-items: flex-start;
+        }
+        .btn--shorten {
+            margin-top: 20px;
+            margin-left: 0px;
+            height: 48px;
+            width: 279px;
         }
     }
 }
@@ -417,7 +452,7 @@ a {
 @media (max-width: 992px) {
     .input--bg--box {
         .form {
-            input {
+            .input--box {
                 width: 450px;
             }
         }
@@ -455,8 +490,9 @@ a {
 @media (max-width: 576px) {
     .input--bg--box {
         .form {
-            input {
+            .input--box {
                 width: 258px;
+                height: 48px;
             }
         }
     }

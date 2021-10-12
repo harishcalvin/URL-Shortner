@@ -15,6 +15,11 @@ a {
   margin: auto;
 }
 
+svg {
+  width: auto;
+  height: auto;
+}
+
 .container .home {
   background-color: #fff;
 }
@@ -187,6 +192,7 @@ a {
 .input--bg--box {
   width: 90%;
   height: 10.5rem;
+  max-height: 11.375rem;
   background-color: #3A3054;
   background-image: url(./images/bg-shorten-desktop.svg);
   background-repeat: no-repeat;
@@ -200,8 +206,35 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 50px;
   border-radius: 10px;
-  margin: 5.9375rem auto auto auto;
+  margin: 5.9375rem 0 0 0;
+}
+
+.input--bg--box .btn--shorten:hover {
+  background-color: #9AE3E3;
+}
+
+.input--bg--box .btn--shorten {
+  width: 11.75rem;
+  height: 4rem;
+  color: #fff;
+  background-color: #2BD0D0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.input--bg--box .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .input--bg--box .form input::-webkit-input-placeholder {
@@ -228,7 +261,7 @@ a {
   font-size: 1.25rem;
 }
 
-.input--bg--box .form input {
+.input--bg--box .form .input--box {
   width: 585px;
   height: 64px;
   border-radius: 10px;
@@ -238,19 +271,33 @@ a {
   font-size: 1.24rem;
 }
 
-.input--bg--box .form .btn--shorten:hover {
-  background-color: #9AE3E3;
+.input--bg--box .form .input--error--text {
+  visibility: hidden;
+  padding: 10px 0;
+  color: #F46363;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 16px;
 }
 
-.input--bg--box .form .btn--shorten {
-  width: 11.75rem;
-  height: 4rem;
-  color: #fff;
-  background-color: #2BD0D0;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.25rem;
-  font-weight: 700;
+.input--box--red {
+  border: 2px solid #F46363 !important;
+}
+
+.red::-webkit-input-placeholder {
+  color: #F46363 !important;
+}
+
+.red:-ms-input-placeholder {
+  color: #F46363 !important;
+}
+
+.red::-ms-input-placeholder {
+  color: #F46363 !important;
+}
+
+.red::placeholder {
+  color: #F46363 !important;
 }
 
 .statistics {
@@ -301,7 +348,7 @@ a {
 .statistics--content .statistics--benefits--box {
   position: relative;
   height: 267px;
-  width: 350px;
+  width: 20.4375rem;
   border-radius: 5px;
   background-color: #fff;
   margin: 40px 10px;
@@ -452,6 +499,11 @@ a {
   .btn--login {
     margin-right: 2.3125rem;
   }
+  .input--bg--box {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -529,6 +581,12 @@ a {
   .hero .hero--image .hero--img {
     position: static;
   }
+  .input--bg--box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .input--bg--box .form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -540,17 +598,20 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .input--bg--box .form .btn--shorten {
+  .input--bg--box .btn--shorten {
     margin-top: 20px;
+    margin-left: 0px;
+    height: 48px;
+    width: 279px;
   }
 }
 
 @media (max-width: 992px) {
-  .input--bg--box .form input {
+  .input--bg--box .form .input--box {
     width: 450px;
   }
 }
@@ -600,8 +661,9 @@ a {
 }
 
 @media (max-width: 576px) {
-  .input--bg--box .form input {
+  .input--bg--box .form .input--box {
     width: 258px;
+    height: 48px;
   }
 }
 /*# sourceMappingURL=style.css.map */
